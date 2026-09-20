@@ -95,6 +95,25 @@ Game Systems
 
 ---
 
+## External Assets
+
+This project uses third-party Unity assets for visual elements and character models. These assets are **not included in this repository** and must be obtained separately from their original sources.
+
+### Required External Assets
+
+* **Stylized Hand-Painted Plant & Flower Pack** — Patchmesh
+  Used for flower models and shop decorations.
+
+* **Girl & Boy Characters**
+  Used for customer character models.
+
+* **Stylized Low Poly Coffee Shop Props Pack – Free**
+  Used for shop environment and decorative props.
+
+> **Note:** These assets are excluded from this repository to respect third-party asset licensing and redistribution terms. The project code, scenes, gameplay systems, and custom UI remain part of this repository.
+
+---
+
 ## What I Learned
 
 This project was my first hands-on project with Unity.
