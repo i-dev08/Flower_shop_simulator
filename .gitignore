@@ -107,3 +107,11 @@ InitTestScene*.unity*
 
 
 .vscode/
+
+# Downloaded Unity asset packs
+/Assets/Patchmesh
+/Assets/Girl & Boy Characters
+/Assets/Stylized Low Poly Coffee Shop Props Pack*
+/Assets/Patchmesh.meta
+/Assets/Girl & Boy Characters.meta
+/Assets/Stylized Low Poly Coffee Shop Props Pack*.meta

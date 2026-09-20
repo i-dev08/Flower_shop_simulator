@@ -2,9 +2,13 @@ using UnityEngine;
 
 public class CustomerManager : MonoBehaviour
 {
-    public GameObject customerPrefab;
+    public GameObject boyCustomerPrefab;
+    public GameObject girlCustomerPrefab;
     public Transform customerSpawnPoint;
     public OrderManager orderManager;
+    public Transform customerWaitPoint;
+    public Transform customerExitPoint;
+    public Transform counter;
 
     private GameObject currentCustomer;
 
@@ -20,15 +24,25 @@ public class CustomerManager : MonoBehaviour
             Destroy(currentCustomer);
         }
 
+        GameObject selectedPrefab;
+
+        if (Random.Range(0,2) == 0)
+        {
+            selectedPrefab = boyCustomerPrefab;
+        } 
+        else {
+            selectedPrefab = girlCustomerPrefab;
+        }
+
         currentCustomer = Instantiate(
-            customerPrefab,
+            selectedPrefab,
             customerSpawnPoint.position,
             customerSpawnPoint.rotation
         );
 
         Customer customer = currentCustomer.GetComponentInParent<Customer>();
 
-        customer.Initialize(this);
+        customer.Initialize(this, customerWaitPoint, customerExitPoint, counter);
 
         orderManager.GenerateOrder();
 
@@ -38,12 +52,11 @@ public class CustomerManager : MonoBehaviour
     public void CustomerLeft()
     {
         currentCustomer = null;
-        Invoke(nameof(SpawnCustomer),3f);
+        SpawnCustomer();
     }
 
-    public void CustomerGotLeft()
+    public GameObject GetCurrentCustomer() 
     {
-        currentCustomer = null;
-        Invoke(nameof(SpawnCustomer),2f);
+        return currentCustomer;
     }
 }

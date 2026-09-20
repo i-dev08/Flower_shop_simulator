@@ -6,7 +6,6 @@ public class BouquetMenuUI : MonoBehaviour
 {
     public TMP_Text wrappingText;
     public CraftingManager craftingManager;
-    public CustomerManager customerManager;
     public OrderManager orderManager;
     public CostManager costManager;
     public PointsManager pointsManager;
@@ -98,7 +97,6 @@ public class BouquetMenuUI : MonoBehaviour
         }
 
         CloseBouquetMenu();
-        customerManager.CustomerGotLeft();
         orderManager.currentOrder = null;
     }
 }
