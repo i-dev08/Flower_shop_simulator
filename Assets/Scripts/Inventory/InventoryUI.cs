@@ -8,17 +8,40 @@ public class InventoryUI : MonoBehaviour
     public TMP_Text roseText;
     public TMP_Text tulipText;
     public TMP_Text sunflowerText;
-    public TMP_Text ribbonText;
+    public UnityEngine.UI.Image ribbonIcon;
+
+    public Sprite redRibbon;
+    public Sprite blueRibbon;
+    public Sprite yellowRibbon;
 
 
     void Update()
     {
-        roseText.text = "Rose X "+inventory.GetItemCount(ItemType.Rose);
+        roseText.text = "X  "+inventory.GetItemCount(ItemType.Rose);
 
-        tulipText.text = "Tulip X "+inventory.GetItemCount(ItemType.Tulip);
+        tulipText.text = "X  "+inventory.GetItemCount(ItemType.Tulip);
 
-        sunflowerText.text = "Sunflower X "+inventory.GetItemCount(ItemType.Sunflower);
+        sunflowerText.text = "X  "+inventory.GetItemCount(ItemType.Sunflower);
 
-        ribbonText.text = "Ribbon: "+inventory.GetRibbon();
+        ribbonIcon.gameObject.SetActive(true);
+
+        switch(inventory.GetRibbon())
+        {
+            case "Red":
+                ribbonIcon.sprite = redRibbon;
+                break;
+
+            case "Blue":
+                ribbonIcon.sprite = blueRibbon;
+                break;
+
+            case "Yellow":
+                ribbonIcon.sprite = yellowRibbon;
+                break;
+
+            default:
+                ribbonIcon.gameObject.SetActive(false);
+                break;
+        }
     }
 }

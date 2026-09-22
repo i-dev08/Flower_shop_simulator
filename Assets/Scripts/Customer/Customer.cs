@@ -29,6 +29,11 @@ public class Customer : MonoBehaviour
         currentPatience = patienceTime;
     }
 
+    public bool IsWaitingAtCounter()
+    {
+        return !isEntering && !isLeaving;
+    }
+
     void Update()
     {
         if (isEntering)
