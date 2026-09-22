@@ -33,6 +33,7 @@ public class FlowerMenuUI : MonoBehaviour
     public void CloseFlowerMenu()
     {
         selectedFlowers.Clear();
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.pickup);
 
         gameObject.SetActive(false);
 
@@ -78,6 +79,7 @@ public class FlowerMenuUI : MonoBehaviour
             if (flower.Value > 0)
             {
                 inventory.AddFlowerFinal(flower.Key, flower.Value);
+                AudioManager.Instance.PlaySFX(AudioManager.Instance.pickup);
             }
         }
 

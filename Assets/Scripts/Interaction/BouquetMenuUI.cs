@@ -70,11 +70,13 @@ public class BouquetMenuUI : MonoBehaviour
     void UpdateWrappingText()
     {
         wrappingText.text = wrappingOptions[currentWrappingIndex];
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.pickup);
     }
 
     public void CloseBouquetMenu()
     {
         gameObject.SetActive(false);
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.pickup);
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -89,10 +91,12 @@ public class BouquetMenuUI : MonoBehaviour
         if (isCorrect)
         {
             Debug.Log("Success");
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.success);
             pointsManager.AddPoints(cost);
         }
         else
         {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.failure);
             Debug.Log("Wrong");
         }
 

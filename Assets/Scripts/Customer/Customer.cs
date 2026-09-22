@@ -114,6 +114,7 @@ public class Customer : MonoBehaviour
             transform.rotation =
                 Quaternion.LookRotation(direction);
         }
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.bellChime);
     }
 
     bool ReachedPoint(Transform target)

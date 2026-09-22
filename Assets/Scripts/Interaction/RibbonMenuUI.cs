@@ -36,6 +36,7 @@ public class RibbonMenuUI : MonoBehaviour
    public void SelectRibbon(string color)
     {
         inventory.AddRibbon(color);
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.pickup);
 
         CloseRibbonMenu();
     }
